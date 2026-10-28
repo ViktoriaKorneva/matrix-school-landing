@@ -47,3 +47,26 @@ checked arithmetic showed that the test, not the implementation, was wrong.
 
 **Evidence:** `src/domain/matrix/matrix.test.ts` and the passing targeted test
 run for all 37 domain cases.
+
+## 2026-10-28 — AI comps are proposals, not product truth
+
+**Task:** Choose a visual direction and first-viewport composition for the
+fictional school concept.
+
+**Proposal considered:** Preserve the dark navy, paper, vermilion, and amber
+energy of the lesson-film direction while combining it with a directly
+recognizable nine-node matrix.
+
+**Verification:** Victoria rejected the literal projector because it suggested
+cinema rather than the product. Three fused compositions were generated. Their
+content was checked against `PRODUCT.md`: an invented login and contact item
+were removed, and mismatched or invented calculation text was corrected using
+the verified 15.07.1991 example before the designs were presented as candidates.
+
+**Decision:** Composition A is approved. The matrix is the dominant first-screen
+object; the date form and primary action remain immediately visible. Cinema
+objects are prohibited, while the sequential-lesson idea survives only in the
+interaction and content order. «Контур 22» remains a working name.
+
+**Evidence:** `docs/assets/design/approved-homepage-comp.png` and the Phase 3
+entry in `plans/2026-10-28-matrix-school-portfolio.md`.

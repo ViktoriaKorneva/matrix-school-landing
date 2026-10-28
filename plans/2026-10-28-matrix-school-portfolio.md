@@ -1,8 +1,8 @@
 # Plan: fictional destiny-matrix school portfolio site
 
 **Spec:** `specs/2026-10-28-matrix-school-portfolio.md`
-**Status:** in_progress — plan and stack approved; technical foundation underway;
-Amvera selected for the live application
+**Status:** in_progress — phases 0–3 completed; approved homepage composition
+ready for Phase 4 implementation; Amvera selected for the live application
 
 ## Stage 0 product frame
 
@@ -85,7 +85,7 @@ second, clearly bounded AI capability without weakening the calculator.
 | 3 | A diagram can fail on mobile and assistive tech | Pair the overview with a semantic point list/detail view | planned |
 | 4 | Fictional content can look deceptive | Mark the concept and prohibit fabricated proof | planned |
 | 5 | AI process evidence can become theatre | Record factual decision traces during each phase; publish only the best 2–3 | planned |
-| 6 | A new stack can add unnecessary complexity | Confirm the smallest suitable stack before scaffolding | pending decision |
+| 6 | A new stack can add unnecessary complexity | Confirm the smallest suitable stack before scaffolding | resolved |
 | 7 | A public AI endpoint can leak keys or spend | Same-origin server, Amvera secret, limits, kill switch, provider budget | planned |
 | 8 | Chat may invent or accept unsafe scope | Curated public knowledge, refusal contract, adversarial and live tests | planned |
 | 9 | Free text may contain personal data | Warning, no calculator context, no app persistence or body logs | planned |
@@ -167,13 +167,22 @@ improving the core hiring evidence.
 
 ### Phase 3: product structure and design direction
 
-- **Status:** pending
+- **Status:** completed
 - **Files:** content model, surface brief, three direction concepts/approved
   visualization, then the chosen page structure
-- **Changes:** use `impeccable` to present three materially different completed
-  directions; Victoria chooses one before UI implementation.
-- **Verification:** each direction proves the first-viewport interaction,
-  visitor path, mobile strategy, and honest content boundary.
+- **Changes:** used `impeccable` to compare three materially different visual
+  worlds, then fused Victoria's chosen qualities: the deep navy, paper,
+  vermilion, and amber system from the lesson-film direction with the clear
+  nine-node topology from the calm category direction. Literal projector,
+  reel, filmstrip, and cinema imagery were removed. Three compositions were
+  generated inside the fused world; Victoria approved composition A, with the
+  matrix as the dominant first-viewport object.
+- **Verification:** all three compositions exposed the first action, exact
+  nine-node diagram, and lesson path. Generated outputs were checked against
+  product truth: invented login/contact controls were removed and inconsistent
+  example arithmetic was corrected before approval. Responsive behavior is an
+  implementation requirement for Phase 4, not claimed from static desktop
+  comps.
 - **Impact:** establishes the visual world later recorded in `DESIGN.md`.
 
 ### Phase 4: interactive calculator lesson
@@ -250,10 +259,10 @@ improving the core hiring evidence.
 
 ## Required gates
 
-Exact commands will be fixed after stack selection. Each phase runs checks
-proportional to the changed area; clean installation and the full gate set run
-for the technical foundation and the final candidate. Reproducible equivalents
-must exist for:
+The stack and project commands are fixed in `package.json`. Each phase runs
+checks proportional to the changed area; clean installation and the full gate
+set run for the technical foundation and the final candidate. Reproducible
+equivalents must exist for:
 
 - type checking;
 - linting;
@@ -262,14 +271,12 @@ must exist for:
 - dependency/security review when dependencies change and on the final candidate;
 - changed-scope self-audit and impact analysis.
 
-## Open decisions before implementation
+## Remaining decisions
 
-1. Approve Astro + TypeScript as the recommended stack.
-2. Amvera is selected for the live application; public source remains on GitHub.
-3. Provider/model selection happens only after a bounded quality/cost check and
+1. Amvera is selected for the live application; public source remains on GitHub.
+2. Provider/model selection happens only after a bounded quality/cost check and
    separate approval of any paid API use and hard budget ceiling. The selected
    provider’s retention/processing terms must be disclosed before live mode.
-4. After research and product structure, choose one of three visual directions.
 
 ## Changelog
 
@@ -282,3 +289,4 @@ must exist for:
 | 2026-10-28 | 1 | Created Astro/Node foundation, server-only env schema, fake provider boundary, health endpoint, Docker/Amvera configuration, public repository, and verified clean install/check/lint/test/build/runtime sync; Docker execution remains unverified locally because Docker CLI is unavailable |
 | 2026-10-28 | 2 | Started the versioned calculation domain and independent control tests |
 | 2026-10-28 | 2 | Implemented the versioned nine-point calculation, controlled calendar validation, auditable reduction traces, and 37 domain tests; full project verification passed with 38 tests |
+| 2026-10-28 | 3 | Approved the fused navy/paper/vermilion/amber visual world without cinema imagery and composition A with the nine-node matrix as the first-viewport focal object; corrected AI-generated scope and arithmetic errors before approval |

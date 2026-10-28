@@ -8,10 +8,11 @@ web
 
 ## Stack
 
-Open decision before implementation. Recommended: Astro + TypeScript with a
-small client-side calculator island and a server-side chat endpoint, packaged as
-one Node application for Amvera. This keeps the landing content-first while the
-calculator stays typed and testable and the model key never reaches the browser.
+Astro + TypeScript with the official standalone Node adapter, a small
+client-side calculator island, and a server-side chat endpoint, packaged as one
+Node application for Amvera. Victoria approved this stack and deployment
+boundary on 2026-10-28. It keeps the landing content-first while the calculator
+stays typed and testable and the model key never reaches the browser.
 
 ## Users
 
