@@ -142,3 +142,12 @@ dedicated black ink on textured vermilion text surfaces.
 `src/components/calculator/calculator.css`,
 `src/components/landing/`, `tests/e2e/landing.spec.ts`, and the completed Phase
 5 entry in the plan.
+
+**Follow-up correction:** Victoria's real Chrome later showed that the main
+title still touched the matrix heading on a wide first viewport. The earlier
+automation compared element boxes; because each title span is a block, that
+measurement did not represent the painted text. Measuring the actual text range
+showed only 6.86 pixels at 1712 CSS pixels and 1.81 pixels at 1920. The grid and
+display scale were rebalanced, wrapping was retained as a fallback, and new
+Range-based browser regressions require at least 24 pixels. The production
+render now measures about 87 pixels at both control widths.

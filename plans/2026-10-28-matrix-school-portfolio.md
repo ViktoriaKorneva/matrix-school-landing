@@ -219,7 +219,7 @@ improving the core hiring evidence.
 - **Verification:** truth and heading audits; keyboard-operable native FAQ;
   header/footer links; forced-colors coverage; no overflow at 360, 390, 1220,
   1440, or the 180-CSS-pixel layout floor; existing date privacy checks;
-  44 unit tests and 14 Playwright tests; production build; zero npm audit
+  44 unit tests and 16 Playwright tests; production build; zero npm audit
   vulnerabilities; clean diff check. The finish reviewer returned `fix`, then
   confirmed all four material fixes and returned `ship`; independent code and
   read-only security reviews closed with no actionable findings. Real browser
@@ -311,3 +311,4 @@ equivalents must exist for:
 | 2026-10-28 | 3 | Approved the fused navy/paper/vermilion/amber visual world without cinema imagery and composition A with the nine-node matrix as the first-viewport focal object; corrected AI-generated scope and arithmetic errors before approval |
 | 2026-10-28 | 4 | Implemented the local interactive calculator lesson, nine semantic point controls, auditable formula detail, responsive material-led composition, accessibility and privacy regressions, and independent UI/security reviews; the final UI reviewer returned `ship` |
 | 2026-10-28 | 5 | Completed the supporting landing, fictional curriculum, method/disclosure, FAQ, anchor navigation and full footer; closed finish-review and AA-contrast findings, passed 44 unit and 14 browser tests, and received final `ship` with no actionable code/security findings |
+| 2026-10-28 | 5 | Fixed Victoria's real-Chrome first-viewport title collision: measured text glyph bounds instead of block boxes, rebalanced the two-column grid, constrained display growth, preserved a wrap fallback, and added passing 1712/1920-pixel regressions; the full suite now passes 44 unit and 16 browser tests |

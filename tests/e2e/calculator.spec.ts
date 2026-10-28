@@ -155,6 +155,32 @@ for (const viewport of [
   });
 }
 
+for (const width of [1712, 1920]) {
+  test(`${width}px keeps the display title clear of the matrix heading`, async ({ page }) => {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto('/');
+
+    const geometry = await page.evaluate(() => {
+      const title = document.querySelector('.calculator h1 span:first-child');
+      const matrixHeading = document.querySelector('[data-result-heading]');
+      if (!title || !matrixHeading) throw new Error('Expected first-viewport headings');
+
+      const titleRange = document.createRange();
+      titleRange.selectNodeContents(title);
+      const titleRect = titleRange.getBoundingClientRect();
+      const matrixRect = matrixHeading.getBoundingClientRect();
+
+      return {
+        gap: matrixRect.left - titleRect.right,
+        sharesVerticalBand: titleRect.bottom > matrixRect.top && titleRect.top < matrixRect.bottom,
+      };
+    });
+
+    expect(geometry.sharesVerticalBand).toBe(true);
+    expect(geometry.gap).toBeGreaterThanOrEqual(24);
+  });
+}
+
 test('reduced motion removes meaningful transition time', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/');
