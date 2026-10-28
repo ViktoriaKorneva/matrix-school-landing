@@ -136,7 +136,7 @@ improving the core hiring evidence.
 
 ### Phase 1: repository and technical foundation
 
-- **Status:** in_progress
+- **Status:** completed
 - **Files:** project configuration, source skeleton, test configuration,
   employer-facing `README.md`, project `AGENTS.md`, server entry/configuration,
   provider interface and deterministic fake
@@ -154,7 +154,7 @@ improving the core hiring evidence.
 
 ### Phase 2: calculation domain and tests
 
-- **Status:** pending
+- **Status:** completed
 - **Files:** calculation module, date validation, domain types/data, unit tests,
   method documentation
 - **Changes:** implement `reduce22`, calendar validation, five base points, four
@@ -279,3 +279,6 @@ must exist for:
 | 2026-10-28 | 0 | Incorporated independent plan review: early privacy gate, continuous AI decision evidence, deterministic date/mobile/accessibility acceptance, and proportional gates |
 | 2026-10-28 | 0 | Added a bounded AI school consultant, rejected unsafe/split GitHub Pages architectures, and selected single-app Amvera deployment |
 | 2026-10-28 | 0 | Victoria approved Astro + TypeScript + Node adapter and the Amvera architecture; Phase 0 closed and Phase 1 started |
+| 2026-10-28 | 1 | Created Astro/Node foundation, server-only env schema, fake provider boundary, health endpoint, Docker/Amvera configuration, public repository, and verified clean install/check/lint/test/build/runtime sync; Docker execution remains unverified locally because Docker CLI is unavailable |
+| 2026-10-28 | 2 | Started the versioned calculation domain and independent control tests |
+| 2026-10-28 | 2 | Implemented the versioned nine-point calculation, controlled calendar validation, auditable reduction traces, and 37 domain tests; full project verification passed with 38 tests |

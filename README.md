@@ -10,8 +10,9 @@ QA, and a public Git history.
 
 ## Current status
 
-Research and specification are complete. The technical foundation is being
-built before visual direction work. No live demo is published yet.
+Research, specification, the technical foundation, and the versioned
+calculation core are complete. Visual direction work comes next. No live demo
+is published yet.
 
 ## Product boundaries
 

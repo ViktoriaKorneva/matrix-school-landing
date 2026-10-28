@@ -28,3 +28,22 @@ strengthening the portfolio evidence.
 - https://docs.amvera.ru/applications/configuration/docker.html
 - https://docs.amvera.ru/applications/configuration/variables.html
 - https://docs.amvera.ru/applications/configuration/network.html
+
+## 2026-10-28 — Independent expected values beat self-confirming tests
+
+**Task:** Implement the documented 22-code reduction and test it beyond the
+portfolio examples.
+
+**Proposal considered:** Add a large safe-integer case to prove that repeated
+digit reduction continues until the value is within 1–22.
+
+**Verification:** The first expected value written for `Number.MAX_SAFE_INTEGER`
+was incorrect. Recomputing every step gave
+`9007199254740991 → 76 → 13`.
+
+**Decision:** Correct the test expectation to 13 and retain the explicit chain
+in the test. The production function was not changed because the independently
+checked arithmetic showed that the test, not the implementation, was wrong.
+
+**Evidence:** `src/domain/matrix/matrix.test.ts` and the passing targeted test
+run for all 37 domain cases.
