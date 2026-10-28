@@ -58,7 +58,7 @@ input:focus-visible,
 
 .calculator {
   display: grid;
-  grid-template-columns: minmax(26rem, 0.68fr) minmax(43rem, 1.32fr);
+  grid-template-columns: minmax(27rem, 0.72fr) minmax(43rem, 1.28fr);
   gap: clamp(2rem, 3.5vw, 4rem);
   align-items: start;
   width: min(calc(100% - 3rem), 92rem);
@@ -75,7 +75,7 @@ input:focus-visible,
 
 .calculator h1 {
   margin: 0;
-  font-size: clamp(3.15rem, 4.1vw, 4.15rem);
+  font-size: clamp(3.15rem, 3.55vw, 3.85rem);
   font-weight: 820;
   line-height: 0.96;
   letter-spacing: -0.035em;

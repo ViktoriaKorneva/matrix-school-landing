@@ -208,12 +208,23 @@ improving the core hiring evidence.
 
 ### Phase 5: landing content and system completion
 
-- **Status:** pending
-- **Files:** page sections, curriculum, method/disclosure, FAQ, footer,
-  responsive styles, public assets
-- **Changes:** complete the chosen visual direction around the working lesson.
-- **Verification:** content truth audit; semantic heading order; links; responsive
-  layout; no invented proof; no copied competitor language or imagery.
+- **Status:** completed
+- **Files:** `src/pages/index.astro`, `src/components/landing/`, focused
+  calculator layout styles, landing browser tests, `DESIGN.md`, `README.md`,
+  and factual project records
+- **Changes:** completed composition A around the working lesson with anchor
+  navigation, an unnumbered three-principle bridge, fictional curriculum,
+  method/disclosure layers, native FAQ, repository close, and full footer.
+  Reused the existing textures and palette; added no external visual assets.
+- **Verification:** truth and heading audits; keyboard-operable native FAQ;
+  header/footer links; forced-colors coverage; no overflow at 360, 390, 1220,
+  1440, or the 180-CSS-pixel layout floor; existing date privacy checks;
+  44 unit tests and 14 Playwright tests; production build; zero npm audit
+  vulnerabilities; clean diff check. The finish reviewer returned `fix`, then
+  confirmed all four material fixes and returned `ship`; independent code and
+  read-only security reviews closed with no actionable findings. Real browser
+  UI zoom at 200% remains unverified because the UI automation environment
+  exposed no available browser.
 - **Impact:** turns the tool into a coherent school concept without changing the
   calculation contract.
 
@@ -299,3 +310,4 @@ equivalents must exist for:
 | 2026-10-28 | 2 | Implemented the versioned nine-point calculation, controlled calendar validation, auditable reduction traces, and 37 domain tests; full project verification passed with 38 tests |
 | 2026-10-28 | 3 | Approved the fused navy/paper/vermilion/amber visual world without cinema imagery and composition A with the nine-node matrix as the first-viewport focal object; corrected AI-generated scope and arithmetic errors before approval |
 | 2026-10-28 | 4 | Implemented the local interactive calculator lesson, nine semantic point controls, auditable formula detail, responsive material-led composition, accessibility and privacy regressions, and independent UI/security reviews; the final UI reviewer returned `ship` |
+| 2026-10-28 | 5 | Completed the supporting landing, fictional curriculum, method/disclosure, FAQ, anchor navigation and full footer; closed finish-review and AA-contrast findings, passed 44 unit and 14 browser tests, and received final `ship` with no actionable code/security findings |

@@ -1,6 +1,8 @@
 ---
 import CalculatorLesson from '../components/calculator/CalculatorLesson.astro';
+import SupportingLanding from '../components/landing/SupportingLanding.astro';
 import '../components/calculator/calculator.css';
+import '../components/landing/landing.css';
 ---
 
 <!doctype html>
@@ -27,140 +29,38 @@ import '../components/calculator/calculator.css';
       <a class="wordmark" href="/" aria-label="Контур 22, на главную">
         <span>Контур</span> <strong>22</strong>
       </a>
-      <p>Вымышленная онлайн-школа · публичный портфолио-концепт</p>
+      <div class="site-header__meta">
+        <nav aria-label="Основная навигация">
+          <a href="#how-it-works">Как это работает</a>
+          <a href="#program">Программа</a>
+          <a href="#method">Метод</a>
+          <a href="#faq">Вопросы</a>
+        </nav>
+        <p>Вымышленная онлайн-школа · публичный портфолио-концепт</p>
+      </div>
     </header>
     <main>
       <CalculatorLesson />
+      <SupportingLanding />
     </main>
-    <footer class="lesson-sequence" aria-label="Три шага интерактивного урока">
-      <ol>
-        <li><strong>Дата</strong><span>Вводишь календарные значения</span></li>
-        <li><strong>Формула</strong><span>Проверяешь все девять расчётов</span></li>
-        <li><strong>Значение</strong><span>Отделяешь символический вопрос от арифметики</span></li>
-      </ol>
+    <footer class="site-footer">
+      <div class="site-footer__layout">
+        <a class="site-footer__wordmark" href="#page-title" aria-label="Контур 22, вернуться к калькулятору">
+          Контур <strong>22</strong>
+        </a>
+        <div class="site-footer__meta">
+          <nav aria-label="Навигация в подвале">
+            <a href="#program">Программа</a>
+            <a href="#method">Метод и ограничения</a>
+            <a href="#faq">FAQ</a>
+            <a href="https://github.com/ViktoriaKorneva/matrix-school-landing">GitHub</a>
+          </nav>
+          <p>
+            Вымышленная онлайн-школа · публичный портфолио-концепт Виктории Корневой.
+            Не является образовательной услугой, диагностикой или прогнозом.
+          </p>
+        </div>
+      </div>
     </footer>
   </body>
 </html>
-
-<style is:global>
-  .site-header {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-    justify-content: space-between;
-    width: min(calc(100% - 3rem), 92rem);
-    margin: 0 auto;
-    padding: 1.25rem 0;
-    border-bottom: 1px solid rgb(242 235 217 / 32%);
-  }
-
-  .wordmark {
-    color: var(--paper);
-    font-size: clamp(1.55rem, 3vw, 2.35rem);
-    font-weight: 820;
-    letter-spacing: -0.035em;
-    text-decoration: none;
-  }
-
-  .wordmark strong {
-    color: var(--vermilion);
-  }
-
-  .site-header p {
-    max-width: 29rem;
-    margin: 0;
-    color: var(--paper-dim);
-    font-size: 0.85rem;
-    line-height: 1.4;
-    text-align: right;
-  }
-
-  .lesson-sequence {
-    background-color: var(--paper);
-    background-image: url('../assets/textures/paper-fibre.webp');
-    background-size: 30rem;
-    color: var(--ink);
-  }
-
-  .lesson-sequence ol {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    width: min(100%, 92rem);
-    margin: 0 auto;
-    padding: 0;
-    background-color: rgb(21 26 36 / 16%);
-    list-style: none;
-    counter-reset: lesson-step;
-  }
-
-  .lesson-sequence li {
-    display: grid;
-    gap: 0.35rem;
-    min-height: 9rem;
-    padding: 2rem clamp(1.25rem, 4vw, 3rem);
-    background-color: var(--paper);
-    background-image: url('../assets/textures/paper-fibre.webp');
-    background-size: 30rem;
-    counter-increment: lesson-step;
-  }
-
-  .lesson-sequence li::before {
-    content: counter(lesson-step);
-    color: var(--vermilion);
-    font-size: 1.6rem;
-    font-weight: 820;
-  }
-
-  .lesson-sequence strong {
-    font-size: 1.25rem;
-  }
-
-  .lesson-sequence span {
-    color: #51545a;
-    line-height: 1.45;
-  }
-
-  @media (max-width: 52rem) {
-    .site-header {
-      width: min(calc(100% - 2rem), 44rem);
-    }
-
-    .site-header p {
-      max-width: 16rem;
-    }
-  }
-
-  @media (max-width: 36rem) {
-    .site-header {
-      align-items: flex-start;
-      width: min(calc(100% - 2rem), 44rem);
-    }
-
-    .site-header p {
-      max-width: 11rem;
-      font-size: 0.72rem;
-    }
-
-    .lesson-sequence ol {
-      grid-template-columns: 1fr;
-    }
-
-    .lesson-sequence li {
-      min-height: 0;
-    }
-  }
-
-  @media (max-width: 22rem) {
-    .site-header {
-      display: grid;
-      gap: 0.5rem;
-    }
-
-    .site-header p {
-      max-width: none;
-      overflow-wrap: anywhere;
-      text-align: left;
-    }
-  }
-</style>

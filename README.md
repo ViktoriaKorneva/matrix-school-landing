@@ -13,8 +13,9 @@ QA, and a public Git history.
 Research, specification, the technical foundation, the versioned calculation
 core, the approved homepage direction, and the interactive calculator lesson
 are complete. The current homepage lets a reviewer validate a birth date,
-calculate all nine points locally, and inspect each formula step separately
-from its symbolic reflection. No live demo is published yet.
+calculate all nine points locally, inspect each formula step separately from
+its symbolic reflection, and continue into the fictional curriculum, method
+limits, FAQ, and public repository path. No live demo is published yet.
 
 ## Product boundaries
 
@@ -53,5 +54,5 @@ npm start
 
 Local routes:
 
-- `GET /` — the Phase 4 interactive calculator lesson.
+- `GET /` — the Phase 5 calculator lesson and supporting school concept.
 - `GET /api/health` — the deterministic health endpoint.

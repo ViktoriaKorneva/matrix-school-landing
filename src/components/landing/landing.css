@@ -1,0 +1,674 @@
+.site-header {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+  width: min(calc(100% - 3rem), 92rem);
+  margin: 0 auto;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid rgb(242 235 217 / 32%);
+}
+
+.wordmark {
+  color: var(--paper);
+  font-size: clamp(1.55rem, 3vw, 2.35rem);
+  font-weight: 820;
+  letter-spacing: -0.035em;
+  text-decoration: none;
+}
+
+.wordmark strong,
+.site-footer__wordmark strong {
+  color: var(--vermilion);
+}
+
+.site-header p {
+  max-width: 19rem;
+  margin: 0;
+  color: var(--paper-dim);
+  font-size: 0.85rem;
+  line-height: 1.4;
+  text-align: right;
+}
+
+.site-header__meta {
+  display: flex;
+  gap: clamp(1.25rem, 3vw, 3rem);
+  align-items: center;
+  justify-content: end;
+  min-width: 0;
+}
+
+.site-header nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+  gap: 0.25rem 1.1rem;
+}
+
+.site-header nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  color: var(--paper);
+  font-size: 0.86rem;
+  font-weight: 680;
+  text-decoration-color: transparent;
+  text-underline-offset: 0.25rem;
+}
+
+.site-header nav a:hover {
+  text-decoration-color: var(--amber);
+}
+
+.wordmark:focus-visible,
+.supporting-landing a:focus-visible,
+.site-footer a:focus-visible,
+.faq summary:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 4px;
+}
+
+.supporting-landing {
+  min-width: 0;
+}
+
+.supporting-landing h2,
+.supporting-landing h3,
+.supporting-landing p,
+.supporting-landing a,
+.site-footer {
+  overflow-wrap: anywhere;
+}
+
+.landing-shell {
+  width: min(calc(100% - 3rem), 92rem);
+  margin: 0 auto;
+}
+
+.lesson-bridge {
+  background-color: var(--paper);
+  background-image: url('../../assets/textures/paper-fibre.webp');
+  background-size: 30rem;
+  color: var(--ink);
+}
+
+.lesson-bridge__layout {
+  display: grid;
+  grid-template-columns: minmax(18rem, 0.82fr) minmax(30rem, 1.18fr);
+  gap: clamp(3rem, 7vw, 8rem);
+  align-items: start;
+  padding-block: clamp(4.5rem, 9vw, 8rem);
+}
+
+.lesson-bridge__layout > *,
+.curriculum__intro > *,
+.method__layout > *,
+.faq__layout > *,
+.project-close__layout > * {
+  min-width: 0;
+}
+
+.lesson-bridge__copy h2,
+.curriculum__intro h2,
+.method__intro h2,
+.faq__intro h2,
+.project-close h2 {
+  max-width: 14ch;
+  margin: 0;
+  font-size: clamp(2.65rem, 5vw, 5.4rem);
+  font-weight: 820;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.lesson-bridge__copy p,
+.curriculum__intro p,
+.method__intro p,
+.faq__intro p,
+.project-close__layout > p {
+  max-width: 42rem;
+  margin: 1.6rem 0 0;
+  font-size: clamp(1rem, 1.45vw, 1.22rem);
+  line-height: 1.65;
+}
+
+.lesson-steps {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid rgb(21 26 36 / 22%);
+  list-style: none;
+}
+
+.lesson-steps li {
+  display: grid;
+  grid-template-columns: minmax(10rem, 0.72fr) minmax(16rem, 1.28fr);
+  gap: 1rem;
+  align-items: baseline;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid rgb(21 26 36 / 22%);
+}
+
+.lesson-steps strong {
+  font-size: 1.08rem;
+}
+
+.lesson-steps span {
+  color: #4f5156;
+  line-height: 1.55;
+}
+
+.curriculum {
+  padding-block: clamp(5rem, 10vw, 9rem);
+}
+
+.curriculum__intro {
+  display: grid;
+  grid-template-columns: minmax(22rem, 0.9fr) minmax(24rem, 0.7fr);
+  gap: clamp(2rem, 7vw, 8rem);
+  align-items: end;
+}
+
+.curriculum__intro h2,
+.faq__intro h2 {
+  color: var(--paper);
+}
+
+.curriculum__intro p,
+.faq__intro p {
+  color: var(--paper-dim);
+}
+
+.curriculum__track {
+  margin: clamp(3.5rem, 7vw, 6rem) 0 0;
+  padding: 0;
+  border-top: 1px solid rgb(242 235 217 / 34%);
+  list-style: none;
+}
+
+.curriculum__track li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 5rem minmax(18rem, 1fr) minmax(16rem, 0.55fr);
+  gap: clamp(1rem, 3vw, 3rem);
+  align-items: start;
+  padding: clamp(1.8rem, 4vw, 3.2rem) 0;
+  border-bottom: 1px solid rgb(242 235 217 / 34%);
+}
+
+.curriculum__track li::after {
+  position: absolute;
+  inset: 0 auto 0 4.95rem;
+  width: 1px;
+  background: rgb(232 168 58 / 52%);
+  content: '';
+}
+
+.curriculum__index {
+  z-index: 1;
+  color: var(--amber);
+  font-size: 1.15rem;
+  font-weight: 820;
+}
+
+.curriculum__track h3 {
+  margin: 0;
+  font-size: clamp(1.55rem, 2.5vw, 2.4rem);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+}
+
+.curriculum__track p {
+  margin: 0.75rem 0 0;
+  color: var(--paper-dim);
+  line-height: 1.6;
+}
+
+.curriculum__track .curriculum__result {
+  margin: 0;
+  padding-top: 0.2rem;
+  color: var(--paper);
+  font-weight: 680;
+}
+
+.method {
+  padding-block: clamp(5rem, 10vw, 9rem);
+  background-color: var(--paper);
+  background-image: url('../../assets/textures/paper-fibre.webp');
+  background-size: 30rem;
+  color: var(--ink);
+}
+
+.method__layout {
+  display: grid;
+  grid-template-columns: minmax(18rem, 0.72fr) minmax(28rem, 1.28fr);
+  gap: clamp(3rem, 8vw, 9rem);
+  align-items: start;
+}
+
+.method__intro {
+  position: sticky;
+  top: 2rem;
+}
+
+.method__layers {
+  margin: 0;
+  border-top: 2px solid var(--ink);
+}
+
+.method__layers > div {
+  display: grid;
+  grid-template-columns: minmax(10rem, 0.42fr) minmax(18rem, 1fr);
+  gap: clamp(1rem, 3vw, 3rem);
+  padding: 2rem 0;
+  border-bottom: 1px solid rgb(21 26 36 / 24%);
+}
+
+.method__layers dt {
+  color: var(--vermilion-deep);
+  font-size: 1.08rem;
+  font-weight: 820;
+}
+
+.method__layers dd {
+  margin: 0;
+  line-height: 1.65;
+}
+
+.method__disclosure {
+  grid-column: 2;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border-radius: var(--radius);
+  background-color: var(--vermilion);
+  background-image: url('../../assets/textures/paper-fibre.webp');
+  background-size: 22rem;
+  background-blend-mode: multiply;
+  color: #000;
+  box-shadow: 0 18px 42px rgb(21 26 36 / 18%);
+}
+
+.method__disclosure strong {
+  font-size: 1.35rem;
+  font-weight: 840;
+}
+
+.method__disclosure p {
+  margin: 0.75rem 0 0;
+  line-height: 1.6;
+}
+
+.faq {
+  padding-block: clamp(5rem, 10vw, 9rem);
+}
+
+.faq__layout {
+  display: grid;
+  grid-template-columns: minmax(17rem, 0.62fr) minmax(28rem, 1.38fr);
+  gap: clamp(3rem, 8vw, 9rem);
+}
+
+.faq__intro {
+  align-self: start;
+}
+
+.faq__list {
+  border-top: 1px solid rgb(242 235 217 / 40%);
+}
+
+.faq details {
+  border-bottom: 1px solid rgb(242 235 217 / 40%);
+}
+
+.faq summary {
+  position: relative;
+  padding: 1.65rem 3.5rem 1.65rem 0;
+  color: var(--paper);
+  cursor: pointer;
+  font-size: clamp(1.12rem, 1.7vw, 1.45rem);
+  font-weight: 720;
+  line-height: 1.35;
+  list-style: none;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary::after {
+  content: none;
+}
+
+.faq__indicator {
+  position: absolute;
+  top: 50%;
+  right: 0.35rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid var(--amber);
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+.faq__indicator::before,
+.faq__indicator::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.72rem;
+  height: 1px;
+  background: var(--amber);
+  content: '';
+  transform: translate(-50%, -50%);
+}
+
+.faq__indicator::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.faq details[open] .faq__indicator::after {
+  opacity: 0;
+}
+
+.faq details p {
+  max-width: 66ch;
+  margin: 0;
+  padding: 0 3.5rem 1.75rem 0;
+  color: var(--paper-dim);
+  line-height: 1.65;
+}
+
+.project-close {
+  padding-block: clamp(4.5rem, 9vw, 8rem);
+  background-color: var(--vermilion);
+  background-image: url('../../assets/textures/paper-fibre.webp');
+  background-size: 24rem;
+  background-blend-mode: multiply;
+  color: #000;
+}
+
+.project-close__layout {
+  display: grid;
+  grid-template-columns: minmax(22rem, 1fr) minmax(20rem, 0.7fr);
+  gap: 2rem clamp(3rem, 9vw, 9rem);
+  align-items: end;
+}
+
+.project-close h2 {
+  max-width: 13ch;
+}
+
+.project-close__layout > p {
+  margin: 0;
+}
+
+.project-close__actions {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 1.5rem;
+}
+
+.project-close__actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.35rem;
+  padding: 0.8rem 1.25rem;
+  border: 1px solid var(--navy-deep);
+  border-radius: var(--radius);
+  color: #000;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.project-close__actions .project-close__primary {
+  background: var(--navy-deep);
+  color: var(--paper);
+}
+
+.site-footer {
+  background: var(--navy-deep);
+  color: var(--paper);
+}
+
+.site-footer__layout {
+  display: grid;
+  grid-template-columns: minmax(12rem, 0.8fr) minmax(20rem, 1.2fr);
+  gap: 2rem;
+  width: min(calc(100% - 3rem), 92rem);
+  margin: 0 auto;
+  padding-block: 3rem;
+}
+
+.site-footer__wordmark {
+  color: var(--paper);
+  font-size: 1.65rem;
+  font-weight: 820;
+  letter-spacing: -0.035em;
+  text-decoration: none;
+}
+
+.site-footer__meta {
+  display: grid;
+  gap: 1.1rem;
+  justify-items: end;
+}
+
+.site-footer__meta p {
+  max-width: 44rem;
+  margin: 0;
+  color: var(--paper-dim);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  text-align: right;
+}
+
+.site-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+  gap: 0.75rem 1.25rem;
+}
+
+.site-footer nav a {
+  color: var(--paper);
+  font-weight: 680;
+  text-underline-offset: 0.25rem;
+}
+
+@media (max-width: 78rem) {
+  .site-header {
+    align-items: start;
+  }
+
+  .site-header__meta {
+    display: grid;
+    gap: 0.35rem;
+    justify-items: end;
+  }
+
+  .curriculum__track li {
+    grid-template-columns: 4rem minmax(17rem, 1fr) minmax(14rem, 0.6fr);
+  }
+
+  .curriculum__track li::after {
+    left: 3.95rem;
+  }
+}
+
+@media (max-width: 64rem) {
+  .lesson-bridge__layout,
+  .curriculum__intro,
+  .method__layout,
+  .faq__layout,
+  .project-close__layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .lesson-bridge__copy h2,
+  .curriculum__intro h2,
+  .method__intro h2,
+  .faq__intro h2,
+  .project-close h2 {
+    max-width: 16ch;
+  }
+
+  .method__intro {
+    position: static;
+  }
+
+  .method__disclosure,
+  .project-close__actions {
+    grid-column: 1;
+  }
+
+  .project-close__layout > p {
+    max-width: 44rem;
+  }
+}
+
+@media (max-width: 52rem) {
+  .site-header,
+  .landing-shell,
+  .site-footer__layout {
+    width: min(calc(100% - 2rem), 44rem);
+  }
+
+  .site-header p {
+    max-width: 22rem;
+  }
+
+  .lesson-steps li {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .lesson-steps span {
+    grid-column: 1;
+  }
+
+  .curriculum__track li {
+    grid-template-columns: 3.5rem minmax(0, 1fr);
+  }
+
+  .curriculum__track li::after {
+    left: 3.45rem;
+  }
+
+  .curriculum__result {
+    grid-column: 2;
+  }
+
+  .method__layers > div {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .site-footer__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer__meta {
+    justify-items: start;
+  }
+
+  .site-footer__meta p {
+    text-align: left;
+  }
+
+  .site-footer nav {
+    justify-content: start;
+  }
+}
+
+@media (max-width: 36rem) {
+  .site-header {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .site-header__meta {
+    justify-items: start;
+  }
+
+  .site-header nav {
+    justify-content: start;
+  }
+
+  .site-header p {
+    max-width: none;
+    font-size: 0.72rem;
+    text-align: left;
+  }
+
+  .lesson-bridge__copy h2,
+  .curriculum__intro h2,
+  .method__intro h2,
+  .faq__intro h2,
+  .project-close h2 {
+    font-size: clamp(2.35rem, 12vw, 3.6rem);
+  }
+
+  .project-close__actions {
+    display: grid;
+  }
+}
+
+@media (max-width: 22rem) {
+  .site-header,
+  .landing-shell,
+  .site-footer__layout {
+    width: min(calc(100% - 1.25rem), 22rem);
+  }
+
+  .site-header p {
+    max-width: none;
+    overflow-wrap: anywhere;
+    text-align: left;
+  }
+
+  .lesson-steps li,
+  .curriculum__track li {
+    grid-template-columns: 1fr;
+  }
+
+  .lesson-steps span,
+  .curriculum__result {
+    grid-column: 1;
+  }
+
+  .curriculum__track li::after {
+    display: none;
+  }
+
+  .faq summary {
+    padding-right: 2.75rem;
+  }
+
+  .faq details p {
+    padding-right: 0;
+  }
+}
+
+@media (forced-colors: active) {
+  .lesson-bridge,
+  .method,
+  .project-close,
+  .site-footer {
+    border-block: 1px solid CanvasText;
+    background: Canvas;
+    color: CanvasText;
+  }
+
+  .curriculum__track li::after {
+    background: CanvasText;
+  }
+
+  .method__disclosure,
+  .project-close__actions .project-close__primary {
+    border: 2px solid CanvasText;
+    background: Canvas;
+    color: CanvasText;
+  }
+}

@@ -114,3 +114,31 @@ responsive route from the selected node through the matrix to the detail card.
 **Evidence:** `src/assets/textures/`,
 `src/components/calculator/calculator.css`,
 `src/components/calculator/calculator.ts`, and the Phase 4 entry in the plan.
+
+## 2026-10-28 — Finish and code reviews changed the supporting landing
+
+**Task:** Complete the fictional school around the calculator without turning
+the working lesson into a secondary marketing widget.
+
+**Proposal considered:** Extend the approved matte-print world with a
+status-only header, a numbered three-principle bridge, typographic FAQ
+plus/minus signs, and textured vermilion surfaces using the existing navy text.
+
+**Verification:** The independent finish review found that the long page needed
+the four approved anchor links, the first-viewport headings overlapped at the
+desktop composition, the three principles were not a true sequence, and the FAQ
+used font glyphs as icons. The independent code review measured ordinary text
+on the multiplied vermilion texture at roughly 4.20–4.23:1, below the 4.5:1 AA
+threshold. After one fix batch, the reviewer marked all four material findings
+resolved and returned `ship`; black text on the measured vermilion pixels
+reached roughly 4.70–4.73:1.
+
+**Decision:** Keep the matrix as the first-viewport proof, restore anchor
+navigation, give the two desktop headings independent space, present the three
+principles as an unordered set, draw FAQ indicators with CSS lines, and use
+dedicated black ink on textured vermilion text surfaces.
+
+**Evidence:** `src/pages/index.astro`,
+`src/components/calculator/calculator.css`,
+`src/components/landing/`, `tests/e2e/landing.spec.ts`, and the completed Phase
+5 entry in the plan.
