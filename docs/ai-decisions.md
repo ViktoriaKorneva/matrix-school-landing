@@ -70,3 +70,47 @@ interaction and content order. «Контур 22» remains a working name.
 
 **Evidence:** `docs/assets/design/approved-homepage-comp.png` and the Phase 3
 entry in `plans/2026-10-28-matrix-school-portfolio.md`.
+
+## 2026-10-28 — Arithmetic truth outranks visual mockup text
+
+**Task:** Turn the approved composition into a working calculator lesson
+without silently inheriting errors from the generated visual.
+
+**Proposal considered:** Reproduce the approved composition literally,
+including its example labels and calculation card.
+
+**Verification:** The visual mixed a `12.04.1990` label with values from the
+verified `15.07.1991` control example and associated the D-point explanation
+inconsistently. The versioned domain tests establish the authoritative example:
+`A=15`, `B=7`, `C=20`, `D=6`, `E=12`, `AB=22`, `BC=9`, `CD=8`, `DA=21`.
+
+**Decision:** Treat the composition as authority for hierarchy, materials, and
+spatial intent only. Render every value, formula, and reduction step from the
+tested domain contract. Keep the arithmetic explanation separate from the
+symbolic reflection so neither can be mistaken for the other.
+
+**Evidence:** `src/domain/matrix/`,
+`src/components/calculator/CalculatorLesson.astro`, and the passing unit and
+browser tests.
+
+## 2026-10-28 — Finish review changed the material implementation
+
+**Task:** Verify that the implemented page preserved the approved visual world
+rather than only its color palette.
+
+**Proposal considered:** A first implementation used mostly smooth CSS surfaces
+and a subtle selected-state treatment.
+
+**Verification:** The independent finish review returned `rebuild`: the page
+lacked the approved tactile paper/ink character, the matrix was not dominant
+enough, and the selected node did not connect clearly to its calculation card.
+After the rebuild, the same reviewer confirmed the remaining node-to-card link
+as resolved on desktop and mobile and returned `ship`.
+
+**Decision:** Use generated raster fibres as restrained material layers,
+strengthen the matrix geometry and headline hierarchy, and draw an explicit
+responsive route from the selected node through the matrix to the detail card.
+
+**Evidence:** `src/assets/textures/`,
+`src/components/calculator/calculator.css`,
+`src/components/calculator/calculator.ts`, and the Phase 4 entry in the plan.

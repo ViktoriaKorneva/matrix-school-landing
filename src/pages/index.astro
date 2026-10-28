@@ -1,0 +1,166 @@
+---
+import CalculatorLesson from '../components/calculator/CalculatorLesson.astro';
+import '../components/calculator/calculator.css';
+---
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="description"
+      content="Интерактивный учебный калькулятор вымышленной онлайн-школы — публичный портфолио-концепт."
+    />
+    <title>Контур 22 — интерактивный калькулятор-урок</title>
+  </head>
+  <body>
+    <!--
+      THESIS: Матрица — работающий учебный механизм первого экрана, а не декоративный знак; стандартный hero с макетом в карточке отвергнут.
+      OWN-WORLD: Глубокий navy, бумага, vermilion и amber; матовые печатные поверхности, круговые узлы и строгая гротескная типографика.
+      STORY: Посетитель вводит дату, получает девять точек, выбирает одну и проверяет арифметику до символического вопроса.
+      FIRST VIEWPORT: Слева объяснение и форма, справа крупная девятиточечная матрица и бумажная трасса выбранного расчёта.
+      FORM: Утверждённая Викторией composition-a из .impeccable/composition-options.json; отдельного seed key в историческом артефакте нет.
+      FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+    -->
+    <header class="site-header">
+      <a class="wordmark" href="/" aria-label="Контур 22, на главную">
+        <span>Контур</span> <strong>22</strong>
+      </a>
+      <p>Вымышленная онлайн-школа · публичный портфолио-концепт</p>
+    </header>
+    <main>
+      <CalculatorLesson />
+    </main>
+    <footer class="lesson-sequence" aria-label="Три шага интерактивного урока">
+      <ol>
+        <li><strong>Дата</strong><span>Вводишь календарные значения</span></li>
+        <li><strong>Формула</strong><span>Проверяешь все девять расчётов</span></li>
+        <li><strong>Значение</strong><span>Отделяешь символический вопрос от арифметики</span></li>
+      </ol>
+    </footer>
+  </body>
+</html>
+
+<style is:global>
+  .site-header {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: space-between;
+    width: min(calc(100% - 3rem), 92rem);
+    margin: 0 auto;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid rgb(242 235 217 / 32%);
+  }
+
+  .wordmark {
+    color: var(--paper);
+    font-size: clamp(1.55rem, 3vw, 2.35rem);
+    font-weight: 820;
+    letter-spacing: -0.035em;
+    text-decoration: none;
+  }
+
+  .wordmark strong {
+    color: var(--vermilion);
+  }
+
+  .site-header p {
+    max-width: 29rem;
+    margin: 0;
+    color: var(--paper-dim);
+    font-size: 0.85rem;
+    line-height: 1.4;
+    text-align: right;
+  }
+
+  .lesson-sequence {
+    background-color: var(--paper);
+    background-image: url('../assets/textures/paper-fibre.webp');
+    background-size: 30rem;
+    color: var(--ink);
+  }
+
+  .lesson-sequence ol {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    width: min(100%, 92rem);
+    margin: 0 auto;
+    padding: 0;
+    background-color: rgb(21 26 36 / 16%);
+    list-style: none;
+    counter-reset: lesson-step;
+  }
+
+  .lesson-sequence li {
+    display: grid;
+    gap: 0.35rem;
+    min-height: 9rem;
+    padding: 2rem clamp(1.25rem, 4vw, 3rem);
+    background-color: var(--paper);
+    background-image: url('../assets/textures/paper-fibre.webp');
+    background-size: 30rem;
+    counter-increment: lesson-step;
+  }
+
+  .lesson-sequence li::before {
+    content: counter(lesson-step);
+    color: var(--vermilion);
+    font-size: 1.6rem;
+    font-weight: 820;
+  }
+
+  .lesson-sequence strong {
+    font-size: 1.25rem;
+  }
+
+  .lesson-sequence span {
+    color: #51545a;
+    line-height: 1.45;
+  }
+
+  @media (max-width: 52rem) {
+    .site-header {
+      width: min(calc(100% - 2rem), 44rem);
+    }
+
+    .site-header p {
+      max-width: 16rem;
+    }
+  }
+
+  @media (max-width: 36rem) {
+    .site-header {
+      align-items: flex-start;
+      width: min(calc(100% - 2rem), 44rem);
+    }
+
+    .site-header p {
+      max-width: 11rem;
+      font-size: 0.72rem;
+    }
+
+    .lesson-sequence ol {
+      grid-template-columns: 1fr;
+    }
+
+    .lesson-sequence li {
+      min-height: 0;
+    }
+  }
+
+  @media (max-width: 22rem) {
+    .site-header {
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .site-header p {
+      max-width: none;
+      overflow-wrap: anywhere;
+      text-align: left;
+    }
+  }
+</style>

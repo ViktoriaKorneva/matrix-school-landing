@@ -10,9 +10,11 @@ QA, and a public Git history.
 
 ## Current status
 
-Research, specification, the technical foundation, and the versioned
-calculation core are complete. Visual direction work comes next. No live demo
-is published yet.
+Research, specification, the technical foundation, the versioned calculation
+core, the approved homepage direction, and the interactive calculator lesson
+are complete. The current homepage lets a reviewer validate a birth date,
+calculate all nine points locally, and inspect each formula step separately
+from its symbolic reflection. No live demo is published yet.
 
 ## Product boundaries
 
@@ -38,6 +40,7 @@ is published yet.
 
 ```bash
 npm install
+npx playwright install chromium
 npm run verify
 npm run dev
 ```
@@ -48,4 +51,7 @@ Production server after `npm run build`:
 npm start
 ```
 
-The only runnable route in the foundation phase is `GET /api/health`.
+Local routes:
+
+- `GET /` — the Phase 4 interactive calculator lesson.
+- `GET /api/health` — the deterministic health endpoint.

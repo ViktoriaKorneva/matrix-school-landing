@@ -1,0 +1,181 @@
+---
+import { POINTS } from './presentation';
+---
+
+<section class="calculator" data-calculator data-state="initial" aria-labelledby="page-title">
+  <div class="calculator__intro">
+    <h1 id="page-title">
+      <span>От даты — к девяти</span>
+      <span>понятным шагам</span>
+    </h1>
+    <p class="calculator__lead">
+      Введи дату, проследи расчёт каждой точки и отдели проверяемую арифметику
+      от символического учебного вопроса.
+    </p>
+
+    <form class="date-form" data-calculator-form novalidate>
+      <fieldset class="date-fields" data-date-fieldset aria-describedby="date-help date-error">
+        <legend>Дата рождения</legend>
+        <label>
+          <span>День</span>
+          <input
+            data-date-field="day"
+            id="birth-day"
+            type="text"
+            inputmode="numeric"
+            autocomplete="bday-day"
+            maxlength="2"
+            placeholder="ДД"
+          />
+        </label>
+        <label>
+          <span>Месяц</span>
+          <input
+            data-date-field="month"
+            id="birth-month"
+            type="text"
+            inputmode="numeric"
+            autocomplete="bday-month"
+            maxlength="2"
+            placeholder="ММ"
+          />
+        </label>
+        <label class="date-fields__year">
+          <span>Год</span>
+          <input
+            data-date-field="year"
+            id="birth-year"
+            type="text"
+            inputmode="numeric"
+            autocomplete="bday-year"
+            maxlength="4"
+            placeholder="ГГГГ"
+          />
+        </label>
+      </fieldset>
+      <p id="date-help" class="date-form__help">Допустимы даты от 01.01.1900 до сегодняшнего дня.</p>
+      <p id="date-error" class="date-form__error" data-date-error role="alert" hidden></p>
+      <div class="date-form__actions">
+        <button class="button button--primary" type="submit">
+          Рассчитать матрицу
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" /></svg>
+        </button>
+        <button class="button button--example" type="button" data-use-example>
+          Показать пример 15.07.1991
+        </button>
+      </div>
+      <p class="date-form__privacy">
+        Дата используется только в этой вкладке для локального расчёта — без сохранения и отправки.
+      </p>
+      <noscript>
+        <p class="date-form__error">Для интерактивного расчёта нужен JavaScript. Дата никуда не отправляется.</p>
+      </noscript>
+    </form>
+  </div>
+
+  <div class="calculator__workspace" data-workspace>
+    <svg class="trace-route" data-trace-route data-visible="false" aria-hidden="true">
+      <defs>
+        <marker id="trace-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="2.5" markerHeight="2.5" orient="auto-start-reverse">
+          <path d="M0 0 10 5 0 10Z"></path>
+        </marker>
+      </defs>
+      <path class="trace-route__underlay" data-trace-path-underlay></path>
+      <path class="trace-route__line" data-trace-path marker-end="url(#trace-arrow)"></path>
+    </svg>
+    <div class="matrix-panel">
+      <div class="matrix-panel__heading">
+        <div>
+          <h2 tabindex="-1" data-result-heading>Девять точек расчёта</h2>
+          <p class="matrix-panel__method">Метод 22 символических кодов, версия 1</p>
+        </div>
+        <div class="matrix-panel__tools" data-result-tools hidden>
+          <button type="button" data-change-date>Изменить дату</button>
+          <button type="button" data-reset>Начать заново</button>
+        </div>
+      </div>
+
+      <div class="matrix-stage" data-matrix-stage>
+        <svg class="matrix-lines" viewBox="0 0 600 600" aria-hidden="true">
+          <circle class="matrix-lines__orbit matrix-lines__orbit--outer" cx="300" cy="300" r="278" />
+          <circle class="matrix-lines__orbit" cx="300" cy="300" r="242" />
+          <path class="matrix-lines__axis" d="M300 8V592M8 300H592" />
+          <path class="matrix-lines__ticks" d="M300 4v30M300 566v30M4 300h30M566 300h30" />
+          <polygon points="130,130 300,70 470,130 530,300 470,470 300,530 130,470 70,300" />
+          <line class="matrix-lines__ray" data-line-id="AB" x1="300" y1="300" x2="130" y2="130" />
+          <line class="matrix-lines__ray" data-line-id="B" x1="300" y1="300" x2="300" y2="70" />
+          <line class="matrix-lines__ray" data-line-id="BC" x1="300" y1="300" x2="470" y2="130" />
+          <line class="matrix-lines__ray" data-line-id="C" x1="300" y1="300" x2="530" y2="300" />
+          <line class="matrix-lines__ray" data-line-id="CD" x1="300" y1="300" x2="470" y2="470" />
+          <line class="matrix-lines__ray" data-line-id="D" x1="300" y1="300" x2="300" y2="530" />
+          <line class="matrix-lines__ray" data-line-id="DA" x1="300" y1="300" x2="130" y2="470" />
+          <line class="matrix-lines__ray" data-line-id="A" x1="300" y1="300" x2="70" y2="300" />
+          <circle class="matrix-lines__axis-dot" cx="300" cy="18" r="6" />
+          <circle class="matrix-lines__axis-dot" cx="582" cy="300" r="6" />
+          <circle class="matrix-lines__axis-dot" cx="300" cy="582" r="6" />
+          <circle class="matrix-lines__axis-dot" cx="18" cy="300" r="6" />
+        </svg>
+
+        <ol class="matrix-nodes" aria-label="Точки матрицы">
+          {POINTS.map((point) => (
+            <li class={`matrix-node matrix-node--${point.position}`}>
+              <button
+                type="button"
+                data-point-id={point.id}
+                aria-pressed="false"
+                aria-label={`${point.label}, ${point.role}. Сначала рассчитай матрицу.`}
+                disabled
+              >
+                <span class="matrix-node__id">{point.id}</span>
+                <span class="matrix-node__value" data-point-value>—</span>
+                <span class="matrix-node__role">{point.role}</span>
+              </button>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </div>
+
+    <aside class="trace-card" data-trace-card aria-label="Подробный расчёт">
+      <div class="trace-card__prompt" data-point-prompt>
+        <h2 data-prompt-title>Сначала рассчитай</h2>
+        <span data-prompt-copy>
+          После расчёта здесь откроются исходные значения, формула и каждый шаг сокращения.
+        </span>
+      </div>
+
+      <div data-point-detail hidden>
+        <h2 data-detail-title></h2>
+        <dl class="trace-card__math">
+          <div>
+            <dt>Исходные значения</dt>
+            <dd data-detail-source></dd>
+          </div>
+          <div>
+            <dt>Формула</dt>
+            <dd data-detail-formula></dd>
+          </div>
+          <div>
+            <dt>Подстановка</dt>
+            <dd data-detail-substitution></dd>
+          </div>
+        </dl>
+        <ol class="trace-card__steps" data-detail-steps></ol>
+        <p class="trace-card__result" data-detail-result></p>
+
+        <div class="symbolic-block">
+          <h3 data-symbolic-title></h3>
+          <p data-symbolic-copy></p>
+          <p class="symbolic-block__prompt" data-lesson-prompt></p>
+          <small>Это вопрос для размышления, а не характеристика человека, диагноз или прогноз.</small>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <p class="sr-status" data-calculator-status aria-live="polite" aria-atomic="true"></p>
+</section>
+
+<script>
+  import './calculator';
+</script>

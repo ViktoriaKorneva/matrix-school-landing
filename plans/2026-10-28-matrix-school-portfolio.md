@@ -1,8 +1,8 @@
 # Plan: fictional destiny-matrix school portfolio site
 
 **Spec:** `specs/2026-10-28-matrix-school-portfolio.md`
-**Status:** in_progress — phases 0–3 completed; approved homepage composition
-ready for Phase 4 implementation; Amvera selected for the live application
+**Status:** in_progress — phases 0–4 completed; the next planned phase is the
+supporting landing content; Amvera remains selected for the live application
 
 ## Stage 0 product frame
 
@@ -82,8 +82,8 @@ second, clearly bounded AI capability without weakening the calculator.
 |---|---|---|---|
 | 1 | The niche has conflicting formulas | Publish and test one explicitly versioned method | researched |
 | 2 | The common funnel is already occupied | Teach inside the result instead of hiding it | researched |
-| 3 | A diagram can fail on mobile and assistive tech | Pair the overview with a semantic point list/detail view | planned |
-| 4 | Fictional content can look deceptive | Mark the concept and prohibit fabricated proof | planned |
+| 3 | A diagram can fail on mobile and assistive tech | Pair the overview with semantic point controls and a detail view | resolved |
+| 4 | Fictional content can look deceptive | Mark the concept and prohibit fabricated proof | resolved |
 | 5 | AI process evidence can become theatre | Record factual decision traces during each phase; publish only the best 2–3 | planned |
 | 6 | A new stack can add unnecessary complexity | Confirm the smallest suitable stack before scaffolding | resolved |
 | 7 | A public AI endpoint can leak keys or spend | Same-origin server, Amvera secret, limits, kill switch, provider budget | planned |
@@ -187,14 +187,22 @@ improving the core hiring evidence.
 
 ### Phase 4: interactive calculator lesson
 
-- **Status:** pending
+- **Status:** completed
 - **Files:** date form, matrix overview, semantic selector/list, point detail,
-  lesson state, component styles and interaction tests
-- **Changes:** build the core journey and all required states.
-- **Verification:** keyboard flow, validation, restart/change date, point
-  selection, exact formula substitution, mobile reading alternative, reduced
-  motion, 360/390 pixel widths, 200% zoom, accessible result announcement, and
-  absence of entered dates from storage, URLs, diagnostics, and network calls.
+  lesson state, generated material textures, component styles, unit and browser
+  interaction tests, and the recorded design system
+- **Changes:** implemented the complete local calculator journey, exact
+  nine-point matrix, semantic point controls, source/formula/substitution/
+  reduction detail, distinct symbolic reflection, restart/change-date states,
+  and a responsive navy/paper/vermilion/amber interface based on composition A.
+- **Verification:** keyboard flow, validation boundaries, restart/change date,
+  all nine expected values, exact formula substitution, accessible result
+  announcement, reduced-motion handling, and responsive layouts at 360, 390,
+  1220, and 1440 pixels passed automated checks. Browser tests also verified
+  that the entered date does not reach storage, cookies, URLs, console output,
+  or network calls, including a no-JavaScript form fallback. A CSS-equivalent
+  180-pixel layout floor passed; real browser UI zoom at 200% was not independently
+  verified in the available browser environment.
 - **Impact:** central product proof; landing sections must support rather than
   compete with it.
 
@@ -290,3 +298,4 @@ equivalents must exist for:
 | 2026-10-28 | 2 | Started the versioned calculation domain and independent control tests |
 | 2026-10-28 | 2 | Implemented the versioned nine-point calculation, controlled calendar validation, auditable reduction traces, and 37 domain tests; full project verification passed with 38 tests |
 | 2026-10-28 | 3 | Approved the fused navy/paper/vermilion/amber visual world without cinema imagery and composition A with the nine-node matrix as the first-viewport focal object; corrected AI-generated scope and arithmetic errors before approval |
+| 2026-10-28 | 4 | Implemented the local interactive calculator lesson, nine semantic point controls, auditable formula detail, responsive material-led composition, accessibility and privacy regressions, and independent UI/security reviews; the final UI reviewer returned `ship` |
