@@ -9,40 +9,43 @@ test('supporting landing keeps one clear heading hierarchy and honest disclosure
   );
   expect(headings.every((heading, index) => index === 0 || heading.level <= headings[index - 1]!.level + 1)).toBe(true);
 
-  await expect(page.getByRole('heading', { name: 'Путь обучения не прячет механику за обещанием' })).toBeVisible();
-  await expect(page.getByText('Это вымышленная программа для портфолио-концепта.')).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'У метода есть чёткая граница' })).toBeVisible();
-  await expect(page.getByText('Здесь нет реальных учеников, преподавателей, квалификаций, отзывов, гарантий или научных заявлений.')).toBeVisible();
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Первый разбор:');
+  await expect(page.locator('.portfolio-status')).toHaveText('Портфолио-концепт · школа не существует.');
+  await expect(page.locator('#E02')).toContainText('Елена хочет снова рисовать.');
+  await expect(page.locator('#B03')).toContainText('не обещает клиентов, дохода');
+  await expect(page.locator('#E01 .teacher-photo')).toHaveAttribute('alt', /сгенерированный.*вымышленной/);
+  await expect(page.locator('#B07 .testimonial-avatar')).toHaveCount(3);
 
   const header = page.getByRole('banner');
-  await expect(header.getByRole('link', { name: 'Как это работает' })).toHaveAttribute('href', '#how-it-works');
-  await expect(header.getByRole('link', { name: 'Программа' })).toHaveAttribute('href', '#program');
-  await expect(header.getByRole('link', { name: 'Метод' })).toHaveAttribute('href', '#method');
-  await expect(header.getByRole('link', { name: 'Вопросы' })).toHaveAttribute('href', '#faq');
+  await expect(header.getByRole('link', { name: 'О курсе' })).toHaveAttribute('href', '#course');
+  await expect(header.getByRole('link', { name: 'Программа' })).toHaveAttribute('href', '#B05');
+  await expect(header.getByRole('link', { name: 'Учебный пример' })).toHaveAttribute('href', '#B04');
+  await expect(header.getByRole('link', { name: 'Вопросы' })).toHaveAttribute('href', '#B10');
 });
 
 test('FAQ is keyboard-operable and public links have a clear destination', async ({ page }) => {
   await page.goto('/');
 
-  const question = page.getByText('Куда попадает введённая дата?', { exact: true });
+  const question = page.locator('#B10 summary').filter({ hasText: 'Что сохраняется после демозаписи?' });
   await question.focus();
   await question.press('Enter');
-  await expect(page.getByText('Никуда за пределы текущей вкладки.')).toBeVisible();
+  await expect(question.locator('..')).toHaveAttribute('open', '');
+  await expect(question.locator('..')).toContainText('Имя и email не сохраняются.');
 
-  const repositoryLinks = page.getByRole('link', { name: /GitHub|репозиторий/ });
+  const repositoryLinks = page.locator('a[href="https://github.com/ViktoriaKorneva/matrix-school-landing"]');
   await expect(repositoryLinks).toHaveCount(2);
   for (const link of await repositoryLinks.all()) {
     await expect(link).toHaveAttribute('href', 'https://github.com/ViktoriaKorneva/matrix-school-landing');
   }
-  await expect(page.getByRole('link', { name: 'К калькулятору', exact: true })).toHaveAttribute('href', '#page-title');
+  await expect(page.locator('#B08').getByRole('link', { name: 'Перейти к открытому уроку', exact: true })).toHaveCount(2);
 });
 
 test('forced colors preserves visible boundaries and focus affordances', async ({ page }) => {
   await page.emulateMedia({ forcedColors: 'active' });
   await page.goto('/');
 
-  const question = page.getByText('Это настоящая онлайн-школа?', { exact: true });
+  const question = page.locator('#B10 summary').first();
   await question.focus();
   await expect(question).toBeFocused();
-  await expect(page.locator('.method__disclosure')).toBeVisible();
+  await expect(page.locator('.boundary-copy')).toBeVisible();
 });

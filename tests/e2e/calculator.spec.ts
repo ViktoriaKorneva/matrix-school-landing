@@ -118,10 +118,10 @@ test('calculation does not persist or transmit the entered date', async ({ page,
   await expect(page.locator('#birth-year')).not.toHaveAttribute('name');
 });
 
-test('form fallback cannot serialize the date when JavaScript is unavailable', async ({ browser }) => {
+test('form fallback cannot serialize the date when JavaScript is unavailable', async ({ browser, baseURL }) => {
   const context = await browser.newContext({ javaScriptEnabled: false });
   const page = await context.newPage();
-  await page.goto('http://127.0.0.1:4321/', { waitUntil: 'networkidle' });
+  await page.goto(baseURL!, { waitUntil: 'networkidle' });
   const requests: string[] = [];
   page.on('request', (request) => requests.push(request.url()));
 
@@ -161,7 +161,7 @@ for (const width of [1712, 1920]) {
     await page.goto('/');
 
     const geometry = await page.evaluate(() => {
-      const title = document.querySelector('.calculator h1 span:first-child');
+      const title = document.querySelector('#calculator-title');
       const matrixHeading = document.querySelector('[data-result-heading]');
       if (!title || !matrixHeading) throw new Error('Expected first-viewport headings');
 
@@ -176,8 +176,13 @@ for (const width of [1712, 1920]) {
       };
     });
 
-    expect(geometry.sharesVerticalBand).toBe(true);
-    expect(geometry.gap).toBeGreaterThanOrEqual(24);
+    if (geometry.sharesVerticalBand) expect(geometry.gap).toBeGreaterThanOrEqual(24);
+    const heroCollision = await page.evaluate(() => {
+      const title = document.querySelector('.offer h1')!.getBoundingClientRect();
+      const sheet = document.querySelector('.specimen')!.getBoundingClientRect();
+      return title.right > sheet.left - 24 && title.bottom > sheet.top && title.top < sheet.bottom;
+    });
+    expect(heroCollision).toBe(false);
   });
 }
 

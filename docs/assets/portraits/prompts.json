@@ -1,0 +1,67 @@
+{
+  "createdAt": "2026-10-29",
+  "tool": "built-in image_gen.imagegen",
+  "mode": "generate, no reference images",
+  "model": "not exposed by the built-in tool; no model identifier is inferred",
+  "termsCheckedAt": "2026-10-29",
+  "termsSources": [
+    "https://openai.com/policies/terms-of-use/",
+    "https://openai.com/policies/service-terms/"
+  ],
+  "assets": {
+    "anna": {
+      "status": "selected",
+      "file": "anna-mironova-2026-10-29.png",
+      "prompt": "Use case: photorealistic-natural. Asset: one original website teacher portrait for a clearly fictional educational portfolio concept, no real person reference. Generate a single photorealistic editorial portrait of fictional Anna Mironova, an adult woman around 40, shoulder-length dark chestnut hair, brown eyes, natural facial proportions and skin texture, thoughtful warm slight smile, looking toward the camera. Waist-up seated composition, both hands naturally resting together near the bottom of the frame, body slightly turned, shoulders relaxed. A simple deep navy shirt over a light ivory top, minimal understated jewelry. A softly blurred warm beige creative study with a plain wall and one out-of-focus book shelf; no visible writing. Soft daylight from a large window, warm neutral color balance, realistic unretouched skin, calm capable approachable teacher rather than glamorous fashion model. Vertical 4:5 composition with head and hands safely within frame, leave modest breathing room around the head so the website can crop slightly. Color palette harmonizes with navy #121a2b, warm paper #f2ebd9 and subtle amber accents. Do not use any real or famous person's likeness. No text, logos, watermark, esoteric props, tarot cards, glowing effects or symbols. One woman only. Finished photographic asset, not a website mockup.",
+      "originalPath": "src/assets/portraits/anna-mironova-2026-10-29.png",
+      "sha256": "67cf54efea33ebd086b736f4754270f2e076992d8560f6a3801b8c8fcbc00b68",
+      "derivative": {
+        "pipeline": "Astro Image, local WebP",
+        "width": 800,
+        "retouching": false,
+        "framing": "CSS object-fit: cover; 4:5 teacher portrait; object-position: 50% 42%"
+      }
+    },
+    "olga": {
+      "status": "selected",
+      "file": "olga-avatar-2026-10-29.png",
+      "prompt": "Use case: photorealistic-natural. Asset: one small circular testimonial avatar for a clearly fictional educational portfolio concept. Generate a single square photographic head-and-shoulders portrait of a completely fictional adult woman named Olga, around 34, chestnut brown softly wavy shoulder-length hair, brown eyes, lightly freckled fair skin, a natural friendly restrained smile, looking at the camera. Simple muted blue blouse, neutral warm ivory softly blurred background, soft window daylight. Honest natural skin texture, approachable everyday appearance, no glamour retouching, editorial portrait quality. Compose the entire head centrally with enough margin above hair and around both shoulders to crop to a circle; face occupies about half the image width, eyes near the upper middle. Square 1:1 frame. The portrait should harmonize with warm paper and deep navy website colors. This is a newly invented fictional person, no real reference and no celebrity likeness. Only one woman, no text, logos, watermark, decorative frame, collage, props or symbols. Deliver the photographic asset, not a website mockup; the circular crop will be made with CSS.",
+      "originalPath": "src/assets/portraits/olga-avatar-2026-10-29.png",
+      "sha256": "e6705fde02ac92e4e554128efc9783bc6f10054c2523b0fbb17afb2877e78e30",
+      "derivative": {
+        "pipeline": "Astro Image, local WebP",
+        "width": 144,
+        "retouching": false,
+        "framing": "CSS object-fit and object-position; circular testimonial avatars"
+      }
+    },
+    "svetlana-v2": {
+      "status": "selected",
+      "file": "svetlana-avatar-v2-2026-10-29.png",
+      "reason": "Separate Svetlana's rounder facial proportions from the other fictional women.",
+      "prompt": "Use case: photorealistic-natural. Make a NEW and clearly distinct fictional woman named Svetlana for a testimonial avatar, not the individual from any previous image and not that person's face with another hairstyle. One adult woman age around 37 with a noticeably broad round face, full cheeks, small wide nose with a softly rounded tip, dark brown almond-shaped slightly hooded eyes, straight low-set eyebrows and a wider closed-mouth smile. Copper red chin-length bob, thin round bronze glasses with clear lenses and no glare. Facial proportions should strongly differ from a narrow-faced blonde and from a freckled oval-faced brunette. Plain muted sage knit top. Warm light beige uncluttered background, soft natural window light, photographic editorial portrait with natural skin texture and everyday realism, no beauty retouching. Square centered head-and-shoulders framing, whole head safely inside frame with margin for circular CSS cropping, eyes in upper middle. Entirely invented fictional adult, no real or celebrity reference. One woman only; no text, logos, watermark, collage, decorative frame, esoteric props or symbols. Finished photographic asset, not a web design.",
+      "originalPath": "src/assets/portraits/svetlana-avatar-v2-2026-10-29.png",
+      "sha256": "865cdf3016a327890345cfc123a5ec3fe350d9e24d32a523835568d4b85bab35",
+      "derivative": {
+        "pipeline": "Astro Image, local WebP",
+        "width": 144,
+        "retouching": false,
+        "framing": "CSS object-fit and object-position; circular testimonial avatars"
+      }
+    },
+    "irina-v2": {
+      "status": "selected",
+      "file": "irina-avatar-v2-2026-10-29.png",
+      "reason": "First portraits looked too similar; make the facial proportions distinguishable, keeping light and framing.",
+      "prompt": "Use case: photorealistic-natural. Create a NEW, distinctly different fictional individual for an educational portfolio testimonial avatar, NOT the woman in any preceding picture and NOT a hairstyle variation of her. One adult woman named Irina, age about 44: notably long narrow face, angular high cheekbones, long straight narrow nose, thin lips, deep-set grey eyes, slightly asymmetrical closed-mouth smile, no freckles, visible natural smile lines. Short ash-blonde pixie hair swept away from her forehead. These particular facial proportions are important: avoid the round-eyed, freckled, full-lipped face used in previous portraits. Plain ivory linen blouse. Warm neutral beige background, soft window light, natural unretouched skin, relaxed everyday editorial portrait. Square head-and-shoulders framing, face centered with breathing room for a circular crop. One woman only. Newly invented fictional identity with no real or famous person reference. No text, watermark, logos, collage, frames, esoteric props or symbols. Final photo asset, not a website mockup.",
+      "originalPath": "src/assets/portraits/irina-avatar-v2-2026-10-29.png",
+      "sha256": "2ca019a3fcd19ae6ea70e4c40678b28dcbe70c4006f6d44cc75438a2eef9eb8c",
+      "derivative": {
+        "pipeline": "Astro Image, local WebP",
+        "width": 144,
+        "retouching": false,
+        "framing": "CSS object-fit and object-position; circular testimonial avatars"
+      }
+    }
+  }
+}

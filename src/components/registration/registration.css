@@ -1,0 +1,106 @@
+/* Functional states over the accepted matte page. */
+[hidden] { display: none !important; }
+body { font-family: 'Onest Variable', 'Segoe UI', sans-serif; background-image: none; overflow-x: visible; }
+button { cursor: pointer; border: 0; font: inherit; }
+button:disabled { cursor: not-allowed; }
+button.primary, button.control { font-weight: 750; }
+button.secondary { border: 1px solid currentColor; }
+button.primary:disabled { background: #35425b; color: #d6cdb8; border: 1px solid #8a9cb6; }
+button.primary:not(:disabled):hover { filter: brightness(1.08); }
+button.secondary:hover { text-decoration: underline; text-underline-offset: 4px; }
+button:focus-visible, input:focus-visible, [tabindex='-1']:focus-visible {
+  outline: 3px solid var(--focus); outline-offset: 5px;
+}
+.demo-page-status { font-size: 14px; line-height: 1.8; }
+.demo-page-status p:not(:empty) { margin-block: 20px; }
+[data-demo-root] { scroll-margin-top: 70px; }
+[tabindex='-1'], .full-section h2, #demo-slots { scroll-margin-top: 80px; }
+[data-demo-root] > .shell > h2 { margin-bottom: 30px; }
+#demo-slots { padding: 0; margin: 0; border: 0; min-width: 0; }
+#demo-slots legend { font-size: 22px; font-weight: 750; padding: 0; }
+.demo-slot { display: flex; align-items: center; gap: 18px; min-height: 84px; padding: 19px 21px; border: 1px solid #8a9cb6; border-radius: 14px; cursor: pointer; }
+.demo-slot input { flex: none; width: 22px; height: 22px; margin: 0; accent-color: #ffd77c; }
+.demo-slot span { font-size: 16px; font-weight: 600; line-height: 1.65; }
+.demo-slot small { display: block; color: #ffd77c; margin-top: 5px; }
+.demo-slot:has(input:focus-visible) { outline: 3px solid #ffd77c; outline-offset: 5px; }
+.demo-return { background: transparent; color: inherit; padding: 8px 0; margin-top: 28px; }
+[data-demo-cancelled] p { max-width: 70ch; margin-block: 26px; line-height: 1.8; }
+.registration-form > .primary { width: 100%; }
+.registration-layout > *, .confirmation-layout > * { min-width: 0; }
+
+/* Keep the verified calculator mechanics, with the accepted K2 scale and flat surfaces. */
+.calculator { --ink: #151a24; width: 100%; grid-template-columns: minmax(230px,.65fr) minmax(0,2fr); gap: 46px; padding: 32px 0 0; }
+.calculator__intro { position: static; max-width: none; }
+.calculator__intro > h3 { font-size: 22px; }
+.calculator__intro > .button { margin-top: 22px; }
+.calculator .date-form { margin-top: 22px; }
+.calculator .date-fields { grid-template-columns: 1fr 1fr 1.35fr; }
+.date-fields legend { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(100%); }
+.calculator__workspace { grid-template-columns: minmax(0,1.1fr) minmax(0,.9fr); gap: 30px; }
+.matrix-panel__heading { display: block; }
+.matrix-panel__heading h3 { font-size: 24px; }
+.matrix-panel__tools { margin-top: 17px; flex-wrap: wrap; }
+.trace-card { grid-column: auto; max-height: none; overflow: visible; box-shadow: none; }
+.trace-card h3 { font-size: 23px; }
+.arithmetic-label { margin-top: 14px; font-size: 13px; font-weight: 750; }
+.calculator .symbolic-block h3 { font-size: 17px; }
+.date-fields input, .button, .matrix-node button, .trace-card, .trace-card__result { background-image: none; }
+.button { box-shadow: none; }
+.trace-card::before { display: none; }
+.matrix-node button { width: clamp(52px,5.3vw,76px); height: clamp(52px,5.3vw,76px); box-shadow: none; outline: 2px solid #666a73; }
+.matrix-node--center button { box-shadow: none; }
+.matrix-node--e button { color: #09121f; }
+.matrix-node button[aria-pressed='true'] { box-shadow: none; outline: 3px solid #ffd77c; outline-offset: 3px; }
+.matrix-node__value { font-size: 28px; }
+.matrix-node__id { font-size: 10px; }
+.matrix-stage { max-width: 540px; }
+.matrix-node button:disabled { opacity: 1; filter: none; background: #35425b; color: #f2ebd9; }
+.date-form__privacy, .date-form__help { font-size: 12px; line-height: 1.8; }
+.date-form__error { color: #ffb5aa; }
+.full-section .calculator p { line-height: 1.8; }
+.button--primary { color: #09121f; }
+.full-paper .primary { --focus: #962f22; }
+@media (max-width:1100px) {
+  .calculator { grid-template-columns: 1fr; gap: 30px; }
+  .calculator__intro { max-width: 550px; }
+  .calculator__workspace { grid-template-columns: minmax(0,1.2fr) minmax(0,1fr); }
+}
+@media (max-width:800px) {
+  .hero-body { grid-template-columns: 1fr; padding-block: 40px 52px; gap: 35px; }
+  .registration-layout, .confirmation-layout { grid-template-columns: 1fr; }
+  .calculator__workspace { grid-template-columns: 1fr; }
+}
+@media (max-width:520px) {
+  .demo-slot { padding: 17px 16px; gap: 14px; }
+  .demo-slot span { font-size: 14px; }
+  .calculator__intro > h3 { font-size: 22px; }
+  .matrix-node button { width: 52px; height: 52px; }
+  .matrix-node__value { font-size: 25px; }
+}
+@media (max-width:350px) {
+  body { overflow-wrap: anywhere; }
+  .shell * { min-width: 0; }
+  .mock-node { grid-template-columns: 20px 26px minmax(0,1fr); gap: 6px; }
+  .role-line, .role-partner { margin-inline: 0; padding-inline: 16px; }
+  .full-curriculum li { grid-template-columns: 18px minmax(0,1fr); gap: 10px; }
+  .faq-list summary { display: block; }
+  .faq-list summary svg { display: block; margin-top: 10px; }
+  .shell, .school-header { width: calc(100% - 32px); }
+  .symbol-pair > div { min-width: 0; }
+  .symbol-pair { flex-wrap: wrap; }
+  .calculator .date-fields { grid-template-columns: 1fr 1fr; }
+  .calculator .date-fields__year { grid-column: 1 / -1; }
+  .matrix-node button { width: 100%; height: auto; }
+  .lesson-program li { grid-template-columns: 1fr; }
+  .full-section h2, .state-surface h2, .offer h1, .full-vermilion h2 { overflow-wrap: anywhere; }
+  .full-header .brand { white-space: normal; }
+  .portfolio-status { padding-inline: 16px; }
+  .numeric-equivalent { grid-template-columns: repeat(3,minmax(0,1fr)); }
+}
+@media (prefers-reduced-motion:reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
+@media (forced-colors:active) {
+  .demo-slot, .trace-card, .matrix-node button { border: 1px solid CanvasText; }
+  .slot-chosen { outline: 3px solid Highlight; }
+}

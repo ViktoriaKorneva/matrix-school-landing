@@ -34,7 +34,7 @@ body {
   margin: 0;
   overflow-x: hidden;
   background-color: var(--navy);
-  background-image: url('../../assets/textures/navy-print.webp');
+  background-image: none;
   background-repeat: repeat;
   background-size: 38rem;
   color: var(--paper);
@@ -141,7 +141,7 @@ input:focus-visible,
   border: 1px solid rgb(242 235 217 / 28%);
   border-radius: 12px;
   background-color: var(--paper);
-  background-image: url('../../assets/textures/paper-fibre.webp');
+  background-image: none;
   background-size: 24rem;
   color: var(--ink);
   font-size: 1.2rem;
@@ -199,7 +199,7 @@ input:focus-visible,
   gap: 0.75rem;
   border: 0;
   background-color: var(--vermilion);
-  background-image: url('../../assets/textures/paper-fibre.webp');
+  background-image: none;
   background-size: 22rem;
   background-blend-mode: multiply;
   color: var(--navy-deep);
@@ -382,7 +382,7 @@ input:focus-visible,
   border: 3px solid var(--navy-deep);
   border-radius: 50%;
   background-color: var(--paper);
-  background-image: url('../../assets/textures/paper-fibre.webp');
+  background-image: none;
   background-size: 18rem;
   color: var(--ink);
   box-shadow:
@@ -456,7 +456,7 @@ input:focus-visible,
   padding: clamp(1.25rem, 2.5vw, 2rem);
   border-radius: var(--radius);
   background-color: var(--paper);
-  background-image: url('../../assets/textures/paper-fibre.webp');
+  background-image: none;
   background-size: 28rem;
   color: var(--ink);
   overflow-wrap: anywhere;
@@ -561,7 +561,7 @@ input:focus-visible,
   padding: 0.5rem 0.8rem;
   border-radius: 10px;
   background-color: var(--vermilion);
-  background-image: url('../../assets/textures/paper-fibre.webp');
+  background-image: none;
   background-size: 18rem;
   background-blend-mode: multiply;
   color: var(--navy-deep);

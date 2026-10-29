@@ -151,3 +151,122 @@ showed only 6.86 pixels at 1712 CSS pixels and 1.81 pixels at 1920. The grid and
 display scale were rebalanced, wrapping was retained as a fallback, and new
 Range-based browser regressions require at least 24 pixels. The production
 render now measures about 87 pixels at both control widths.
+
+## 2026-10-28 — Compare the course offer before implementing it
+
+**Task:** Prepare three visual alternatives from the accepted mini-course
+prototype, without implementing the page or demo registration.
+
+**Decision:** Keep one navy/paper/vermilion/amber continuation and compare it
+with a broad cobalt workshop and a quieter plum dialogue composition. Use
+static HTML/CSS/SVG and the existing local Onest font. Do not copy the old
+raster textures while their provenance remains incomplete. No paid services,
+portraits, external model API, or helpers were used.
+
+**Verification:** Real Chromium renders exposed an isolated final letter in
+the cobalt mobile heading and low-contrast action disclosures inherited by
+the light example surfaces. One fix batch corrected the scale and scoped the
+light text rules to dark hero surfaces. A second render found no horizontal
+overflow or failing direct text contrast pairs at 1440, 390, and 360 pixels.
+This is static-artifact verification, not registration, storage, screen-reader,
+real zoom, or fresh-reader evidence. The design detector did not return a clean
+pass against the previous design system; details and limits are in the task plan.
+
+**Evidence:** `.impeccable/minicourse/`, its provenance and verification record,
+and `plans/2026-10-28-minicourse-visual-mockups.md`.
+
+**Selection:** Victoria explicitly chose A, “Матовая практика”. The approved
+direction is recorded separately from implementation.
+
+## 2026-10-28 — Develop the selected direction without implying implementation
+
+**Task:** Turn A into the complete accepted page and the full demo/calculator
+state set, preserving product content and the existing production source.
+
+**Decision:** Use an ordinary page-flow registration region and a separate
+static state atlas. Draw focus targets and recovery branches explicitly; do not
+implement storage or let an error scene claim successful replacement/deletion.
+Keep all accepted copy and use the existing calculator's values and error texts.
+
+**Verification:** The complete page, 31 demo scenes, and 12 calculator scenes
+were rendered at 1440/390 and inspected at 360. All accepted paragraph groups and
+five content tables were found in the page. Eight static state assertions cover
+major error/recovery distinctions. Per-block PNG export initially painted sticky
+page chrome over long content; the capture style now excludes that chrome,
+while the full page retains its designed sticky status. No production behavior,
+screen reader, real zoom, or fresh-reader understanding is claimed.
+
+**Evidence:** `.impeccable/minicourse/selected/`, its design/manifest/verification
+records, provenance V07–V10, and the bounded visual-mockup plan.
+
+**Pending:** Victoria's acceptance or corrections to the detailed mockups,
+explicit stage closure, separately approved implementation and publication.
+
+## 2026-10-29 — Correct the example and add fictional portraits
+
+**Task:** Apply Victoria's three mockup corrections: make the learning example
+understandable, add Anna's portrait, and add circular testimonial avatars.
+
+**Decision:** Use one concrete drawing case throughout the specimen, learning
+materials, and exercise. Convert the two symbolic themes into direct questions
+without using numbers to explain behavior. Generate four fictional adult
+portraits with the built-in image tool, preserve original PNGs and exact prompts,
+and retain visible fictional disclosures. Two initial avatar versions were
+superseded to make the characters more visually distinct.
+
+**Verification:** Updated desktop/mobile renders show Anna's portrait and three
+circular avatars without text collisions. All four images load. Static coverage,
+state assertions, overflow, direct text contrast, syntax, and lint checks pass.
+Production source, registration behavior, dependencies, and publication were
+outside this correction. The internal image model was not exposed by the tool.
+
+**Evidence:** The mockup plan's 29 October entry, source provenance M12,
+image provenance G01–G06, and
+`.impeccable/minicourse/selected/assets/portraits/prompts.json`.
+
+**Pending:** Victoria's review of these corrections and acceptance of the mockups.
+
+**Acceptance, 29 October:** Victoria positively reviewed the corrections and
+requested the next-session implementation prompt. The corrected mockup task is
+accepted; the broader Phase 8 remains open. The handoff is recorded in
+`plans/2026-10-29-minicourse-implementation-handoff.md`; implementation did not
+start in the handoff session.
+
+## 2026-10-29 — Separate offered slots from valid confirmations
+
+**Problem:** Reusing the next-three/24-hour offering filter for restored bookings
+would incorrectly discard an already confirmed future time.
+
+**Decision:** Implemented separate pure schedule generation and strict record
+validation, with an injectable clock and independent storage operations. The
+controller retains the old saved record until replacement succeeds and does not
+announce cancellation if removal fails. The first failed save instead produces
+an explicitly memory-only confirmation. Editing preserves original createdAt.
+
+**Evidence:** 29 new domain tests plus browser journeys cover boundary times,
+two accepted calendar exceptions, corruption, read/write/replace/delete denial,
+refresh, focus and network/storage limits. Calculation core/controller and
+package files remain unchanged. This is implementation evidence, not measured
+conversion or a claim of professional education outcomes.
+
+## 2026-10-29 — Preserve the accepted page and existing calculator
+
+**Decision:** Migrated corrected A content into production Astro components;
+kept the original calculator engine and adapted its shell to optional K2.
+Preserved the selected PNGs byte-for-byte, recorded prompts/hashes, and used
+Astro's existing image pipeline for WebP derivatives. No image was regenerated.
+
+**Observed correction:** The small E-node label measured 4.416:1 against
+vermilion. Changed it to the accepted deeper ink and added a contrast regression
+across visible page/demo states. Layout checks distinguish 180 CSS px reflow
+from real 200% browser zoom.
+
+**Boundary:** Checks and reviews were performed in the main session without
+helpers. Implementation awaits Victoria's acceptance; Phase 8 is not closed.
+No commit, push, publication, AI consultant or real registration was introduced.
+
+**Acceptance, 29 October:** Victoria checked the local implementation, then
+explicitly closed this bounded task and requested the next-session prompt.
+Prepared the Phase 9 boundary/data handoff without running that phase.
+Earlier pending-acceptance lines describe the state before this decision.
+Overall Phase 8 and the unverified release checks are not automatically closed.

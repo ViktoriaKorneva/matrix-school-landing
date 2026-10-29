@@ -12,9 +12,10 @@
     "lint": "eslint .",
     "test": "vitest run",
     "test:e2e": "playwright test",
+    "test:e2e:production": "playwright test --config playwright.production.config.ts",
     "build": "astro build",
     "start": "node ./dist/server/entry.mjs",
-    "verify": "npm run check && npm run lint && npm test && npm run build && npm run test:e2e"
+    "verify": "npm run check && npm run lint && npm test && npm run build && npm run test:e2e && npm run test:e2e:production"
   },
   "dependencies": {
     "@astrojs/node": "11.1.9",

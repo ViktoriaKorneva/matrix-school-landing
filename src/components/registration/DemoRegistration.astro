@@ -1,0 +1,96 @@
+---
+import LessonProgram from './LessonProgram.astro';
+---
+
+<div class="shell demo-page-status">
+  <p data-demo-live role="status" aria-live="polite" aria-atomic="true"></p>
+  <p data-booking-status hidden>У вас есть демозапись. Кнопка записи откроет её подтверждение, чтобы изменить время или отменить.</p>
+  <p data-demo-fallback>Для деморегистрации нужен JavaScript. Предложение курса и программа открытого урока доступны на странице. Настоящих заявок и отправки данных на сайте нет.
+    <a href="#open-lesson">Посмотреть программу открытого урока</a>
+  </p>
+</div>
+<section id="demo-registration" data-demo-root class="state-surface" aria-labelledby="demo-heading" hidden>
+  <div class="shell">
+    <h2 id="demo-heading" tabindex="-1">Выберите демовремя открытого урока</h2>
+    <p id="demo-error" class="error-message" hidden></p>
+    <p data-memory-warning class="notice-box" hidden></p>
+    <div data-demo-preparation class="registration-layout">
+      <div class="registration-intro">
+        <div class="lesson-summary">
+          <h3>Как проходит первый учебный разбор — и что в работе консультанта важнее расчёта</h3>
+          <p>Бесплатный открытый урок · 45 минут</p>
+        </div>
+        <p class="demo-disclosure">Демонстрация интерфейса. Используйте подготовленный пример: настоящая запись, письмо и место на уроке не создаются. Ничего не отправляется. Подтверждение временно хранится только в этой вкладке, если браузер разрешает хранение.</p>
+        <p data-current-slot class="notice-box" hidden></p>
+        <p data-editing-description hidden>Выберите другое демовремя и сохраните изменение. До сохранения действует прежнее подтверждение. Вторая запись не создаётся.</p>
+      </div>
+      <div class="registration-form">
+        <fieldset id="demo-slots" tabindex="-1" aria-describedby="demo-schedule demo-error">
+          <legend>Время открытого урока</legend>
+          <p id="demo-schedule" class="schedule-note">Демо-расписание: события не состоятся. Время Москвы. Новые варианты — не ранее чем через 24 часа.</p>
+          <div data-demo-slots class="slots"></div>
+        </fieldset>
+        <p data-selected-time class="selected-time" hidden></p>
+        <div class="prepared" data-example-block>
+          <h3>Данные для демонстрации</h3>
+          <p data-example-instruction>Нажмите «Заполнить пример», чтобы использовать вымышленные имя и email. Вводить свои данные не потребуется.</p>
+          <button class="control secondary" type="button" data-demo-action="example" aria-describedby="demo-error">Заполнить пример</button>
+          <div data-prepared-values hidden>
+            <dl class="prepared-values">
+              <div class="worksheet-field"><dt>Имя</dt><dd>Марина Соколова</dd></div>
+              <div class="worksheet-field"><dt>Email</dt><dd>student@example.com</dd></div>
+            </dl>
+            <p>Подготовленные вымышленные данные. Изменять их не нужно; настоящие контакты не принимаются. Они не отправляются и не сохраняются в подтверждении.</p>
+          </div>
+        </div>
+        <button class="control primary" type="button" data-demo-action="confirm" aria-describedby="demo-completion demo-error" disabled>Подтвердить демозапись</button>
+        <p id="demo-completion" class="completion-help">Для подтверждения выберите время и заполните пример.</p>
+        <p data-draft-help class="draft-help">Черновик не сохраняется после обновления страницы. Если выйти сейчас, выбор сбросится.</p>
+        <button class="control secondary" type="button" data-demo-action="reset" hidden>Сбросить черновик</button>
+        <button class="control secondary" type="button" data-demo-action="back" hidden>Вернуться без изменений</button>
+      </div>
+    </div>
+    <div data-demo-confirmed class="confirmation-layout" hidden>
+      <div class="confirmation-intro">
+        <p class="confirmation-message">Подтверждение действует только в этой вкладке. Ничего не отправлено, письмо не придёт. Настоящее место не забронировано, урок не состоится.</p>
+        <dl class="confirmation-summary">
+          <div><dt>Открытый урок</dt><dd>Как проходит первый учебный разбор — и что в работе консультанта важнее расчёта</dd></div>
+          <div><dt>Выбранное демовремя</dt><dd data-confirmed-slot></dd></div>
+          <div><dt>Длительность</dt><dd>45 минут</dd></div>
+          <div><dt>Пример участницы</dt><dd>Марина Соколова, student@example.com. Данные вымышлены.</dd></div>
+        </dl>
+        <p class="storage-note" data-storage-note></p>
+        <div class="confirmation-actions">
+          <button class="control primary" type="button" data-demo-action="edit">Изменить время</button>
+          <button class="control secondary" type="button" data-demo-action="cancel" aria-describedby="demo-cancel-help">Отменить демозапись</button>
+          <button class="control secondary" type="button" data-demo-action="dismiss-error" hidden>Вернуться к подтверждению</button>
+        </div>
+        <p id="demo-cancel-help" class="cancel-help">Отмена удалит текущее локальное подтверждение. После неё можно начать демонстрацию заново.</p>
+      </div>
+      <div class="confirmation-content">
+        <h3>Программа открытого урока</h3>
+        <LessonProgram />
+        <h3>Как можно было бы подготовиться</h3>
+        <p>Для упражнения достаточно бумаги или заметок и готового учебного примера. Своя дата и сведения о других людях не нужны. Здесь нет ссылки на встречу или учебного кабинета: это демонстрация регистрации.</p>
+      </div>
+    </div>
+    <div data-demo-cancelled hidden>
+      <p>Локальное подтверждение удалено. Активной демозаписи нет. Настоящей заявки и письма не создавалось.</p>
+      <button class="control primary" type="button" data-demo-action="repeat">Записаться снова</button>
+    </div>
+    <button class="text-link demo-return" type="button" data-demo-action="close">Вернуться к странице</button>
+  </div>
+</section>
+
+<script>
+  import('./registration').then(({ initRegistration }) => initRegistration()).catch(() => {
+    document.querySelectorAll<HTMLButtonElement>('[data-demo-open]').forEach((button) => { button.disabled = true; });
+    const fallback = document.querySelector<HTMLElement>('[data-demo-fallback]');
+    if (fallback) {
+      fallback.hidden = false;
+      fallback.textContent = 'Не удалось открыть демонстрацию. Обновите страницу или продолжите чтение. Ничего не отправлено.';
+    }
+    const root = document.querySelector<HTMLElement>('[data-demo-root]');
+    if (root) root.hidden = true;
+  });
+</script>

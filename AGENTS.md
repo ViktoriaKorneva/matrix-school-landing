@@ -25,6 +25,18 @@ to show to employers.
   unrelated files.
 - After each commit, push the current branch and verify synchronization.
 
+## Model and session boundary
+
+- Use GPT-6.1 Sol with high reasoning effort for the main chat and any permitted
+  helper. Do not switch to GPT-5.6 Sol or another model for cost, speed, limits,
+  or a generic latest-model recommendation unless Victoria explicitly changes
+  the model for this project.
+- If GPT-6.1 Sol High is unavailable, report the limitation instead of silently
+  continuing on another model.
+- One bounded task is completed and accepted in one chat. Prepare the next
+  self-contained continuation prompt only after Victoria explicitly closes the
+  current stage.
+
 ## Technical boundaries
 
 - Astro + TypeScript + official Node adapter, one same-origin Amvera app.
